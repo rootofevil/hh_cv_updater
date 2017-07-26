@@ -1,0 +1,14 @@
+DEBUG    [2017-07-26 14:50:35,486] Starting new HTTPS connection (1): hh.ru
+DEBUG    [2017-07-26 14:50:35,602] https://hh.ru:443 "POST /oauth/token HTTP/1.1" 404 170
+DEBUG    [2017-07-26 14:54:32,084] Starting new HTTPS connection (1): hh.ru
+DEBUG    [2017-07-26 14:54:32,195] https://hh.ru:443 "POST /oauth/token HTTP/1.1" 404 170
+DEBUG    [2017-07-26 14:54:55,131] Starting new HTTPS connection (1): hh.ru
+DEBUG    [2017-07-26 14:54:55,242] https://hh.ru:443 "GET /oauth/token HTTP/1.1" 404 170
+DEBUG    [2017-07-26 14:55:43,876] Starting new HTTPS connection (1): hh.ru
+DEBUG    [2017-07-26 14:55:43,987] https://hh.ru:443 "GET /oauth/token HTTP/1.1" 404 170
+DEBUG    [2017-07-26 15:02:30,708] Starting new HTTPS connection (1): hh.ru
+DEBUG    [2017-07-26 15:02:30,820] https://hh.ru:443 "POST /oauth/token HTTP/1.1" 404 170
+DEBUG    [2017-07-26 15:02:48,716] Starting new HTTPS connection (1): hh.ru
+DEBUG    [2017-07-26 15:02:48,837] https://hh.ru:443 "POST /oauth/token HTTP/1.1" 400 68
+DEBUG    [2017-07-26 15:03:05,194] Starting new HTTPS connection (1): hh.ru
+DEBUG    [2017-07-26 15:03:05,559] https://hh.ru:443 "POST /oauth/token HTTP/1.1" 400 68
