@@ -28,7 +28,7 @@ def get_ca_ids():
         
 
 def update_all_cas():
-    ids = get_ca_ids
+    ids = get_ca_ids()
     for id in ids:
         update_resume(id)
 
