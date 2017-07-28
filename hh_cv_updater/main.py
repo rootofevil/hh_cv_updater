@@ -53,6 +53,9 @@ def token_update():
     refresh_token = redis.get('refresh_token')
     data = {'grant_type': 'refresh_token', 'refresh_token': refresh_token}
     r = requests.post(url = update_url, headers = new_header, data = data)
+    data = r.json()
+    redis.set('access_token', data['access_token'])
+    redis.set('refresh_token', data['refresh_token'])
     error_handler(r)
     return r
     
