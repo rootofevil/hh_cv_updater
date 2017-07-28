@@ -2,7 +2,7 @@
 from dateutil import parser
 from datetime import datetime
 
-logging.basicConfig(format = u'%(levelname)-8s [%(asctime)s] %(message)s', level = logging.DEBUG, filename = 'oauth-client.log')
+logging.basicConfig(format = u'%(levelname)-8s [%(asctime)s] %(message)s', level = logging.DEBUG, filename = 'updater.log')
 redis = redis.Redis(unix_socket_path='/tmp/redis.sock')
 access_token = redis.get('access_token')
 auth_line = 'Bearer ' + access_token
