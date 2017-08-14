@@ -29,8 +29,12 @@ def get_ca_ids():
 
 def update_all_cas():
     ids = get_ca_ids()
-    for id in ids:
-        update_resume(id)
+    try:
+        for id in ids:
+            update_resume(id)
+    except TypeError:
+        logging.error("Cant Take Resume List")
+        exit(1)
 
 def update_resume(resume_id):
     method = '/resumes/' + resume_id + '/publish'
@@ -63,12 +67,12 @@ def token_update():
 def error_handler(r):
     logging.error(r.status_code)
     data = r.json()
-    error = data['error']
-    error_description = data['error_description']
+    error = data['errors']
+    error_description = data['description']
     logging.error(error_description)
-    logging.error(error)
-    if error == 'invalid_grant' and error_description == 'code expired':
-        token_update()
+    #logging.error(error['value'])
+    #if error['type'] == 'oauth' and error['value'] == 'token_expired':
+    #    token_update()
                 
 if __name__ == '__main__':
-    print update_all_cas()
+    update_all_cas()
