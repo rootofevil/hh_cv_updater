@@ -60,19 +60,21 @@ def token_update():
     data = r.json()
     redis.set('access_token', data['access_token'])
     redis.set('refresh_token', data['refresh_token'])
-    error_handler(r)
-    return r
+    if not r.ok:
+        error_handler(r)
     
         
 def error_handler(r):
-    logging.error(r.status_code)
+    logging.error('Error handler: ' + str(r.status_code))
     data = r.json()
-    error = data['errors']
+    error = data['errors'][0]
     error_description = data['description']
-    logging.error(error_description)
-    #logging.error(error['value'])
-    #if error['type'] == 'oauth' and error['value'] == 'token_expired':
-    #    token_update()
+    logging.error('Error handler: ' + error_description)
+    logging.error(error['value'])
+    if error['type'] == 'oauth' and error['value'] == 'token_expired':
+        logging.info("Error handler: we need update token")
+        token_update()
+        update_all_cas()
                 
 if __name__ == '__main__':
     update_all_cas()
